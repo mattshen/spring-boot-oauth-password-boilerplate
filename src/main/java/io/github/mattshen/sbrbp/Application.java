@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,13 +14,12 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.WebApplicationInitializer;
 
-@EnableAutoConfiguration
-@Configuration
+@SpringBootApplication
 @ComponentScan({
 	"io.github.mattshen.sbrbp.services",
-	"io.github.mattshen.sbrbp.controller"
+	"io.github.mattshen.sbrbp.controller",
+	"io.github.mattshen.sbrbp.config"
 })
-@EnableAuthorizationServer
 @EnableResourceServer
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class Application extends SpringBootServletInitializer implements WebApplicationInitializer {

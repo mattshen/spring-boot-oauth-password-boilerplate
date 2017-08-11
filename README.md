@@ -23,5 +23,10 @@ curl localhost:8181/oauth/token -d "grant_type=password&scope=read&username=user
 
 ### Access Protected Resource
 ```bash
-curl -H "Authorization: bearer ecc3be30-100a-48f2-b45f-93d0868c1df4" localhost:8181/user
+curl -H "Authorization: bearer 52f8e9af-de94-41d8-87a4-756d58a51c95" localhost:8181/user
+```
+
+### Check Token
+```
+curl -H "Authorization: bearer 52f8e9af-de94-41d8-87a4-756d58a51c95" localhost:8181/oauth/check_token
 ```
